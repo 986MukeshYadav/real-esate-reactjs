@@ -22,8 +22,7 @@ const HouseContextProvider = ({children}) => {
     });
     
     //remove duplicates
-    const uniqueCountries = ['Location (any)',...
-    new Set(allCountries)];
+    const uniqueCountries = ['Location (any)',...new Set(allCountries)];
    
     //set countries state
     setCountries(uniqueCountries);
@@ -36,8 +35,7 @@ const HouseContextProvider = ({children}) => {
     });
     
     //remove duplicates
-    const uniqueProperties = ['Location (any)', ...
-    new Set(allProperties)];
+    const uniqueProperties = ['Location (any)', ...new Set(allProperties)];
    
     //set properties state
     setProperties(uniqueProperties);
@@ -58,8 +56,8 @@ const HouseContextProvider = ({children}) => {
     const maxPrice=parseInt(price.split('')[2]);
     console.log(maxPrice);
 
-    const newHouses=housesData.filter((house)=>{
-    const housePrice= parseInt(house.price);
+     const newHouses = housesData.filter((house) => {
+      const housePrice = parseInt(house.price);
     //if all values are selected
     if(house.country===country  &&
        house.type === property &&
@@ -114,11 +112,11 @@ const HouseContextProvider = ({children}) => {
 
    });
   
-   setTimeout(()=>{
-    return newHouses.length < 1 ? setHouses([]):
-    setHouses(newHouses),
-    setLoading(false);
-   },1000);
+   setTimeout(() => {
+      return newHouses.length < 1
+        ? setHouses([])
+        : setHouses(newHouses), setLoading(false);
+    }, 1000);
   };
      
   return (
@@ -135,7 +133,6 @@ const HouseContextProvider = ({children}) => {
     houses,
     loading,
     handleClick,
-    loading
   }}
   >
    {children} 

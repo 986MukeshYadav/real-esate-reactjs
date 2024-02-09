@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import backgroundImage from '../assets/img/houses/b.avif'; // Import your background image
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
+
 
 const SignUp = () => {
   const [userData, setUserData] = useState({
@@ -9,7 +12,8 @@ const SignUp = () => {
     email: '',
     password: '',
   });
-
+ 
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserData({
@@ -23,6 +27,8 @@ const SignUp = () => {
     console.log('Sign Up with:', userData);
     // Add your sign up logic here
   };
+
+  
 
   const styles = {
     container: {
@@ -62,44 +68,48 @@ const SignUp = () => {
       padding: '10px',
       marginBottom: '16px',
       marginLeft: '45px',
-      border: '1px solid #ddd',
-      borderRadius: '4px',
+      border: '3px solid #007bff',
+      borderRadius: '100px',
       fontSize: '14px',
-      color: '#000000',
+      color: 'white',
       fontWeight: 'bold',
+      backgroundColor: 'rgba(255, 255, 255, 0)',
     },
 
     input1: {
       padding: '10px',
       marginBottom: '16px',
       marginLeft: '17px',
-      border: '1px solid #ddd',
-      borderRadius: '4px',
+      border: '3px solid #007bff',
+      borderRadius: '100px',
       fontSize: '14px',
-      color: '#000000',
+      color: 'white',
       fontWeight: 'bold',
+      backgroundColor: 'rgba(255, 255, 255, 0)',
     },
 
     input2: {
         padding: '10px',
         marginBottom: '16px',
         marginLeft: '44px',
-        border: '1px solid #ddd',
-        borderRadius: '4px',
+        border: '3px solid #007bff',
+        borderRadius: '100px',
         fontSize: '14px',
-        color: '#000000',
+        color: 'white',
         fontWeight: 'bold',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
       },
 
       input4: {
         padding: '10px',
         marginBottom: '16px',
         marginLeft: '49px',
-        border: '1px solid #ddd',
-        borderRadius: '4px',
+        border: '3px solid #007bff',
+        borderRadius: '100px',
         fontSize: '14px',
-        color: '#000000',
+        color: 'white',
         fontWeight: 'bold',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
       },
 
 
@@ -119,6 +129,8 @@ const SignUp = () => {
   };
 
   return (
+  <>
+  <Header/>
     <div style={styles.container}>
       <img src={require('../assets/img/houses/a.jpeg')} alt="HomeLand." style={styles.logo} />
       <h2 style={styles.header}>Sign Up</h2>
@@ -167,6 +179,17 @@ const SignUp = () => {
             required
           />
         </label>
+        <label style={styles.label}>
+          Conform Password:
+          <input
+            type="password"
+            name="cnfpassword"
+            value={userData.password}
+            onChange={handleInputChange}
+            style={styles.input1}
+            required
+          />
+        </label>
 
         
         <button 
@@ -177,8 +200,13 @@ const SignUp = () => {
         >
          <Link to="/signIn">Sign Up</Link>
         </button>
+        <p style={{ textAlign: 'center', marginTop: '10px', color: '#007bff', cursor: 'pointer' }}>
+          Already have an account? Login
+        </p>
       </form>
     </div>
+    <Footer/>
+    </>
   );
 };
 
