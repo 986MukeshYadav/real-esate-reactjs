@@ -1,66 +1,58 @@
-// import { useState } from "react";
-// const App = () => {
-//   const [open, setOpen] = useState(true);
-//   const Menus = [
-//     { title: "Dashboard", src: "Chart_fill" },
-//     { title: "Inbox", src: "Chat" },
-//     { title: "Accounts", src: "User", gap: true },
-//     { title: "Schedule ", src: "Calendar" },
-//     { title: "Search", src: "Search" },
-//     { title: "Analytics", src: "Chart" },
-//     { title: "Files ", src: "Folder", gap: true },
-//     { title: "Setting", src: "Setting" },
-//   ];
+import React from 'react';
+import './dash.css'; 
+import logooutIcon from '../assets/images/dash/logout.png';
 
-//   return (
-//     <div className="flex">
-//       <div
-//         className={` ${
-//           open ? "w-72" : "w-20 "
-//         } bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
-//       >
-//         <img
-//           src="./src/assets/control.png"
-//           className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
-//            border-2 rounded-full  ${!open && "rotate-180"}`}
-//           onClick={() => setOpen(!open)}
-//         />
-//         <div className="flex gap-x-4 items-center">
-//           <img
-//             src="./src/assets/logo.png"
-//             className={`cursor-pointer duration-500 ${
-//               open && "rotate-[360deg]"
-//             }`}
-//           />
-//           <h1
-//             className={`text-white origin-left font-medium text-xl duration-200 ${
-//               !open && "scale-0"
-//             }`}
-//           >
-//             Designer
-//           </h1>
-//         </div>
-//         <ul className="pt-6">
-//           {Menus.map((Menu, index) => (
-//             <li
-//               key={index}
-//               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-//               ${Menu.gap ? "mt-9" : "mt-2"} ${
-//                 index === 0 && "bg-light-white"
-//               } `}
-//             >
-//               <img src={`./src/assets/${Menu.src}.png`} />
-//               <span className={`${!open && "hidden"} origin-left duration-200`}>
-//                 {Menu.title}
-//               </span>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//       <div className="h-screen flex-1 p-7">
-//         <h1 className="text-2xl font-semibold ">Home Page</h1>
-//       </div>
-//     </div>
-//   );
-// };
-// export default App;
+const Dashboard = () => {
+  return (
+    <div className="dashboard">
+      <div className="sidebar">
+        <div className="user-info">
+          <img  src='/login.png' alt="Login" width="50" height="50" />
+          <p>Mukesh Yadav</p>
+          <p>myadav986@rku.ac.in</p>
+        </div>&nbsp;
+
+        {/* Repeat the following block for each sidebar button */}
+        <div className="sidebar-button">
+          <img src={logooutIcon} alt="Login Icon" width="30" height="30" />
+          <span>Dashboard</span>
+        </div>&nbsp;
+
+        <div class="sidebar-button">
+        <img src="property.png" alt="Login Icon" width="30" height="30"/>
+        <span>Property</span>
+      </div>&nbsp;
+
+      <div class="sidebar-button">
+        <img src="fav.png" alt="Login Icon" width="30" height="30"/>
+        <span>Favourite</span>
+      </div>&nbsp;
+
+      <div class="sidebar-button">
+        <img src="setting.png" alt="Login Icon" width="30" height="30"/>
+        <span>Setting</span>
+      </div>&nbsp;
+      
+      <div class="sidebar-button">
+        <img src="logout.png" alt="Login Icon" width="30" height="30"/>
+        <span>Logout</span>
+      </div>
+
+        {/* ... Other sidebar buttons ... */}
+      </div>
+
+      <div className="main-content">
+        <div className="navbar">
+          <h2>HomeLand</h2>
+          <div className="notification-bar">
+            <img className="notification-icon" src="notification.png" alt="Notification Icon" width="30" height="30" />
+          </div>
+        </div><br />
+
+        
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;

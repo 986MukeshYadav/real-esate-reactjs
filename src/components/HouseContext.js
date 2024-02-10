@@ -56,8 +56,8 @@ const HouseContextProvider = ({children}) => {
     const maxPrice=parseInt(price.split('')[2]);
     console.log(maxPrice);
 
-     const newHouses = housesData.filter((house) => {
-      const housePrice = parseInt(house.price);
+    const newHouses=housesData.filter((house)=>{
+    const housePrice= parseInt(house.price);
     //if all values are selected
     if(house.country===country  &&
        house.type === property &&
@@ -112,11 +112,11 @@ const HouseContextProvider = ({children}) => {
 
    });
   
-   setTimeout(() => {
-      return newHouses.length < 1
-        ? setHouses([])
-        : setHouses(newHouses), setLoading(false);
-    }, 1000);
+   setTimeout(()=>{
+    return newHouses.length < 1 ? setHouses([]):
+    setHouses(newHouses),
+    setLoading(false);
+   },1000);
   };
      
   return (

@@ -11,6 +11,7 @@ const SignUp = () => {
     lastName: '',
     email: '',
     password: '',
+    cnfpassword:'',
   });
  
   
@@ -79,7 +80,7 @@ const SignUp = () => {
     input1: {
       padding: '10px',
       marginBottom: '16px',
-      marginLeft: '17px',
+      marginLeft: '27px',
       border: '3px solid #007bff',
       borderRadius: '100px',
       fontSize: '14px',
@@ -112,6 +113,18 @@ const SignUp = () => {
         backgroundColor: 'rgba(255, 255, 255, 0)',
       },
 
+      input5: {
+        padding: '10px',
+        marginBottom: '16px',
+        marginLeft: '15px',
+        border: '3px solid #007bff',
+        borderRadius: '100px',
+        fontSize: '14px',
+        color: 'white',
+        fontWeight: 'bold',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+      },
+
 
     button: {
       padding: '14px',
@@ -130,9 +143,8 @@ const SignUp = () => {
 
   return (
   <>
-  <Header/>
     <div style={styles.container}>
-      <img src={require('../assets/img/houses/a.jpeg')} alt="HomeLand." style={styles.logo} />
+      {/* <img src={require('../assets/img/houses/a.jpeg')} alt="HomeLand." style={styles.logo} /> */}
       <h2 style={styles.header}>Sign Up</h2>
       <form style={styles.form} onSubmit={handleSignUp}>
         <label style={styles.label}>
@@ -180,13 +192,13 @@ const SignUp = () => {
           />
         </label>
         <label style={styles.label}>
-          Conform Password:
+          Cnf Password:
           <input
             type="password"
             name="cnfpassword"
-            value={userData.password}
+            value={userData.cnfpassword}
             onChange={handleInputChange}
-            style={styles.input1}
+            style={{...styles.input5,width: '55%' }}
             required
           />
         </label>
@@ -198,18 +210,15 @@ const SignUp = () => {
           onMouseEnter={() => styles.buttonHover}
           onMouseLeave={() => ({})}
         >
-         <Link to="/signIn">Sign Up</Link>
-        </button>
-        <p style={{ textAlign: 'center', marginTop: '10px', color: '#007bff', cursor: 'pointer' }}>
-          Already have an account? Login
-        </p>
-      </form>
-    </div>
-    <Footer/>
+         <Link style={{color:'white',fontWeight: 'bold'}} to="/signIn">Register</Link>
+         </button>
+          <p style={{ textAlign: 'center', marginTop: '10px', color: 'white', cursor: 'pointer' }}>
+            Already have an account? <Link style={{fontWeight: 'bold'}} to="/signIn"> Log in</Link>
+          </p>
+        </form>
+      </div>
     </>
   );
-
-  
 };
 
 export default SignUp;

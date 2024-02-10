@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 
 //import components
@@ -30,5 +29,3 @@ const {handleClick} = useContext(HouseContext)
 };
 
 export default Search;
-
-//heloo
