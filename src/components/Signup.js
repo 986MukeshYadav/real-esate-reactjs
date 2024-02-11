@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import backgroundImage from '../assets/img/houses/b.avif'; // Import your background image
 import { Link } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
+ 
 
 
 const SignUp = () => {
   const [userData, setUserData] = useState({
-    firstName: '',
-    lastName: '',
+    tName: '',
+    phone: '',
     email: '',
     password: '',
     cnfpassword:'',
