@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import backgroundImage from '../assets/img/houses/b.avif'; // Import your background image
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+
  
 
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
-    tName: '',
-    phone: '',
-    email: '',
-    password: '',
-    cnfpassword:'',
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+    cnfpassword:"",
   });
  
-  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserData({
@@ -22,11 +25,36 @@ const SignUp = () => {
     });
   };
 
-  const handleSignUp = (e) => {
+  const PostData = async (e) => {
     e.preventDefault();
-    console.log('Sign Up with:', userData);
-    // Add your sign up logic here
-  };
+
+    const {name , phone , email , password , cnfpassword } = userData;
+    const res = await fetch("/register",{
+      method:"POST",
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        name , phone , email , password , cnfpassword   
+    })
+  });
+     const data  = await res.json();
+     if(data.status === 422 || !data){
+      window.alert("Invalid registration");
+      console.log("Invalid registration");
+     }else{
+            window.alert("Registration successfully ");
+            console.log("Registration successfully");
+
+            navigate("/signIn");
+     }
+  }
+
+  // const handleSignUp = (e) => {
+  //   e.preventDefault();
+  //   console.log('Sign Up with:', userData);
+  //   // Add your sign up logic here
+  // };
 
   
 
@@ -145,13 +173,13 @@ const SignUp = () => {
     <div style={styles.container}>
       {/* <img src={require('../assets/img/houses/a.jpeg')} alt="HomeLand." style={styles.logo} /> */}
       <h2 style={styles.header}>Sign Up</h2>
-      <form style={styles.form} onSubmit={handleSignUp}>
+      <form method="POST" style={styles.form} onSubmit={PostData}>
         <label style={styles.label}>
           Name:
           <input
             type="text"
-            name="firstName"
-            value={userData.firstName}
+            name="name"
+            value={userData.name}
             onChange={handleInputChange}
             style={styles.input}
             required
@@ -161,8 +189,8 @@ const SignUp = () => {
           Phone:
           <input
             type="text"
-            name="Phone"
-            value={userData.Phone}
+            name="phone"
+            value={userData.phone}
             onChange={handleInputChange}
             style={styles.input2}
             required
@@ -208,8 +236,10 @@ const SignUp = () => {
           style={styles.button}
           onMouseEnter={() => styles.buttonHover}
           onMouseLeave={() => ({})}
+          value="register"
+         //onClick={PostData}
         >
-         <Link style={{color:'white',fontWeight: 'bold'}} to="/signIn">Register</Link>
+         <Link style={{color:'white',fontWeight: 'bold'}} >Register</Link>
          </button>
           <p style={{ textAlign: 'center', marginTop: '10px', color: 'white', cursor: 'pointer' }}>
             Already have an account? <Link style={{fontWeight: 'bold'}} to="/signIn"> Log in</Link>

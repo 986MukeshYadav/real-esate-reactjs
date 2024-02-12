@@ -1,17 +1,11 @@
 import React from 'react';
-
-//import routes and route
 import{Routes,Route} from 'react-router-dom';
-
-//import components
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SignIn from './components/Signin';  
 import SignUp from './components/Signup';   
 import HouseList from './components/HouseList';  
 import About from './components/About';  
-
-//import pages
 import Home from './pages/Home';
 import PropertyDetails from './pages/PropertyDetails';
 
