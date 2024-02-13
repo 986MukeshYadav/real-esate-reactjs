@@ -5,7 +5,8 @@ import Footer from './components/Footer';
 import SignIn from './components/Signin';  
 import SignUp from './components/Signup';   
 import HouseList from './components/HouseList';  
-import About from './components/About';  
+import About from './components/About'; 
+import AboutMe from './components/AboutMe';  
 import Home from './pages/Home';
 import PropertyDetails from './pages/PropertyDetails';
 
@@ -20,6 +21,7 @@ const App = () => {
    <Route path='/signUp' element={<SignUp />} />  {/* Add the SignUp route */}
    <Route path='/Home' element={<Home />} /> 
    <Route path='/About' element={<About />} /> 
+   <Route path='/AboutMe' element={<AboutMe />} /> 
    <Route path='/HouseList' element={<HouseList />} /> 
    <Route path='/contact' element={<Footer />} />  
    

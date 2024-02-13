@@ -1,26 +1,56 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import backgroundImage from '../assets/img/houses/b.avif'; 
+import { useNavigate } from 'react-router-dom';
 
-const SignIn = () => {
-  const [credentials, setCredentials] = useState({
-    username: '',
-    password: '',
-    rememberMe: false,
-  });
+// const SignIn = () => {
+//   const [credentials, setCredentials] = useState({
+//     username: '',
+//     password: '',
+//     rememberMe: false,
+//   });
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setCredentials({
-      ...credentials,
-      [name]: type === 'checkbox' ? checked : value,
-    
+const SignIn =()=>{
+  const navigate = useNavigate();
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
+
+ const loginUser = async (e)=>{
+    e.preventDefault();
+    const res = await fetch('/signin',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        email,
+        password
+      })
     });
-  };
+    const data = res.json();
+
+    if(res.status === 400 || !data){
+      window.alert("Invalid credentials");
+    }else{
+      window.alert("Login successfully");
+      navigate("/");
+    }
+    
+ }
+
+
+  // const handleInputChange = (e) => {
+  //   const { name, value, type, checked } = e.target;
+  //   setCredentials({
+  //     ...credentials,
+  //     [name]: type === 'checkbox' ? checked : value,
+    
+  //   });
+  // };
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    console.log('Sign In with:', credentials);
+    console.log('Sign In with:',{ email, password });
     // Add your authentication logic here
   };
 
@@ -115,14 +145,14 @@ const SignIn = () => {
     <div style={styles.container}>
       {/* <img src={require('../assets/img/houses/a.jpeg')} alt="HomeLand." style={styles.logo } />Add your logo */}
       <h2 style={styles.header}>Sign In</h2>
-      <form style={styles.form} onSubmit={handleSignIn}>
+      <form method="POST" style={styles.form} onSubmit={handleSignIn}>
         <label style={styles.label}>
           Username:
           <input
             type="text"
-            name="username"
-            value={credentials.username}
-            onChange={handleInputChange}
+            name="email"
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
             style={styles.input}
             required
           />
@@ -132,8 +162,8 @@ const SignIn = () => {
           <input
             type="password"
             name="password"
-            value={credentials.password}
-            onChange={handleInputChange}
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
             style={styles.input1}
             required
           />
@@ -143,8 +173,8 @@ const SignIn = () => {
       <input
         type="checkbox"
         name="rememberMe"
-        checked={credentials.rememberMe}
-        onChange={handleInputChange}
+        // checked={credentials.rememberMe}
+        // onChange={handleInputChange}
       />
       Remember Me
     </label>
@@ -160,6 +190,7 @@ const SignIn = () => {
           style={styles.button}
           onMouseEnter={() => styles.buttonHover}
           onMouseLeave={() => ({})}
+          onClick={loginUser}
         >
           Sign In
         </button>

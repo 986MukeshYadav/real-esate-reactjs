@@ -17,6 +17,7 @@ const Header = () => {
           <Link className=' text-black px-4 py-3 rounded-lg  transition' to='/HouseList' >Property</Link>
           <Link className='hover:text-voilet-900 transition' to='/About'>About</Link>
           <Link className=' text-black px-4 py-3 rounded-lg  transition' to='/Footer'>Contact</Link>
+          <Link className=' text-black px-4 py-3 rounded-lg  transition' to='/AboutMe'>DashBoard</Link>
           <Link className='bg-violet-700 hover:bg-violet-800 text-white px-4 py-3 rounded-lg  transition' to='/signIn'>Join us
           </Link>
         </div>
