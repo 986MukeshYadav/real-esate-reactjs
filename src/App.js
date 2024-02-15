@@ -8,6 +8,7 @@ import HouseList from './components/HouseList';
 import About from './components/About'; 
 import AboutMe from './components/AboutMe';  
 import Home from './pages/Home';
+import Logout from './components/Logout';
 import PropertyDetails from './pages/PropertyDetails';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
    <Route path='/Home' element={<Home />} /> 
    <Route path='/About' element={<About />} /> 
    <Route path='/AboutMe' element={<AboutMe />} /> 
+   <Route path='/logout' element={< Logout />} /> 
    <Route path='/HouseList' element={<HouseList />} /> 
    <Route path='/contact' element={<Footer />} />  
    

@@ -20,6 +20,8 @@ const Header = () => {
           <Link className=' text-black px-4 py-3 rounded-lg  transition' to='/AboutMe'>DashBoard</Link>
           <Link className='bg-violet-700 hover:bg-violet-800 text-white px-4 py-3 rounded-lg  transition' to='/signIn'>Join us
           </Link>
+          <Link className='bg-red-700 hover:bg-red-800 text-white px-4 py-3 rounded-lg  transition' to='/logout'>Logout
+          </Link>
         </div>
       </div>
     </header>
