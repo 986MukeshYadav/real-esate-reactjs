@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import backgroundImage from '../assets/img/houses/b.avif'; 
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../App';
 
 // const SignIn = () => {
 //   const [credentials, setCredentials] = useState({
@@ -11,6 +12,11 @@ import { useNavigate } from 'react-router-dom';
 //   });
 
 const SignIn =()=>{
+
+  const {dispatch} = useContext(UserContext);
+
+
+
   const navigate = useNavigate();
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
@@ -32,6 +38,7 @@ const SignIn =()=>{
     if(res.status === 400 || !data){
       window.alert("Invalid credentials");
     }else{
+      dispatch({type:"USER",payload:true});
       window.alert("Login successfully");
       navigate("/");
     }

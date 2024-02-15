@@ -1,4 +1,6 @@
-import React from 'react';
+
+
+import React, { createContext, useReducer } from 'react';
 import{Routes,Route} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -10,10 +12,17 @@ import AboutMe from './components/AboutMe';
 import Home from './pages/Home';
 import Logout from './components/Logout';
 import PropertyDetails from './pages/PropertyDetails';
+import { initialState,reducer } from '../src/reducer/UseReducer';
+
+//1.contextAPI
+export const UserContext = createContext();
 
 const App = () => {
+  const [state,dispatch]=useReducer(reducer,initialState)
   return (
+    
   <div className='max-w-[1440px] mx-auto bg-white'>
+    <UserContext.Provider value={{state,dispatch}}>
    <Header/>
    <Routes>
    <Route path='/' element={<Home/>}/>
@@ -29,7 +38,9 @@ const App = () => {
    
    </Routes>
    <Footer/> 
+   </UserContext.Provider>
     </div>
+   
   );
 };
 
