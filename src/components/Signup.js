@@ -45,7 +45,6 @@ const SignUp = () => {
      }else{
             window.alert("Registration successfully ");
             console.log("Registration successfully");
-
             navigate("/signIn");
      }
   }
