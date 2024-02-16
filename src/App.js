@@ -11,6 +11,9 @@ import About from './components/About';
 import AboutMe from './components/AboutMe';  
 import Home from './pages/Home';
 import Logout from './components/Logout';
+import AdminLayout from './components/layouts/AdminLayout';
+import  AdminUsers  from './pages/Admin-Users';
+import Admincontact  from './pages/Admin-Contact';
 import PropertyDetails from './pages/PropertyDetails';
 import { initialState,reducer } from '../src/reducer/UseReducer';
 
@@ -34,8 +37,15 @@ const App = () => {
    <Route path='/AboutMe' element={<AboutMe />} /> 
    <Route path='/logout' element={< Logout />} /> 
    <Route path='/HouseList' element={<HouseList />} /> 
+
+   <Route path="/admin" element={<AdminLayout/>}> 
+    <Route path="users" element={<AdminUsers/>} /> 
+    <Route path="contacts" element={<Admincontact/>} />
+</Route>
+
+
    <Route path='/contact' element={<Footer />} />  
-   
+  
    </Routes>
    <Footer/> 
    </UserContext.Provider>
