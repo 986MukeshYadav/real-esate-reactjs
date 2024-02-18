@@ -12,7 +12,7 @@ import AboutMe from './components/AboutMe';
 import Home from './pages/Home';
 import Logout from './components/Logout';
 import AdminLayout from './components/layouts/AdminLayout';
-import  AdminUsers  from './pages/Admin-Users';
+import  AdminUsers  from './pages/AdminUsers';
 import Admincontact  from './pages/Admin-Contact';
 import PropertyDetails from './pages/PropertyDetails';
 import { initialState,reducer } from '../src/reducer/UseReducer';
