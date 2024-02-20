@@ -40,8 +40,7 @@ const App = () => {
 
    <Route path="/admin" element={<AdminLayout/>}> 
     <Route path="users" element={<AdminUsers/>} /> 
-    <Route path="contacts" element={<Admincontact/>} />
-</Route>
+    <Route path="contacts" element={<Admincontact/>} /></Route>
 
 
    <Route path='/contact' element={<Footer />} />  
