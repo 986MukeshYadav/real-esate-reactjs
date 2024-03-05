@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import mukeshpic from '../images/mukeshpic.jpg';
+
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Dashboard';
 
@@ -89,14 +89,14 @@ const AboutMe = () => {
             <div style={styles.contentContainer}>
                 <form method="GET">
                     <div style={styles.profileSection}>
-                        <div className="profile-img">
+                        {/* <div className="profile-img">
                             <img src={mukeshpic} alt="Profile" style={styles.profileImg} />
-                        </div>
-                        <div style={styles.profileDetails}>
+                        </div> */}
+                        {/* <div style={styles.profileDetails}>
                             <h2>{userData.name}</h2>
                             <h4>React Developer</h4>
                             <p className="profile-rating">Rankings: <span>1/10</span></p>
-                        </div>
+                        </div> */}
                         <div style={styles.editProfileBtn}>
                             <input type="submit" className="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
                         </div>
@@ -107,9 +107,9 @@ const AboutMe = () => {
                             <li className="nav-item">
                                 <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab" href="#home" style={styles.navLink}>About</a>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link" id="profile-tab" data-toggle="tab" role="tab" href="#profile" style={styles.navLink}>Timeline</a>
-                            </li>
+                            </li> */}
                         </ul>
 
                         <div className="tab-content" style={styles.tabContent}>

@@ -169,7 +169,7 @@ const SignUp = () => {
 
   return (
   <>
-    <div style={styles.container}>
+    <div style={styles.container} className='mb-8'>
       {/* <img src={require('../assets/img/houses/a.jpeg')} alt="HomeLand." style={styles.logo} /> */}
       <h2 style={styles.header}>Sign Up</h2>
       <form method="POST" style={styles.form} onSubmit={PostData}>

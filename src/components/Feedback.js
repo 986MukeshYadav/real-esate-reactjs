@@ -21,7 +21,7 @@ const FeedbackForm = () => {
 
   return (
     <>
-      <div style={{ fontFamily: 'Arial, sans-serif', textAlign: 'center', margin: 0, padding: 0 }}>
+      <div style={{ fontFamily: 'Arial, sans-serif', textAlign: 'center', margin: 0, padding: 0 }} className="mb-10">
         <div style={{ width: '80%', margin: 'auto' }}>
           <div id="feedback-form" style={{ maxWidth: '400px', margin: 'auto', padding: '20px', border: '1px solid #ddd', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', backgroundColor: '#fff' }}>
             <h2>Please rate your experience</h2>

@@ -149,7 +149,7 @@ const SignIn =()=>{
   };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container}  className="mb-10">
       {/* <img src={require('../assets/img/houses/a.jpeg')} alt="HomeLand." style={styles.logo } />Add your logo */}
       <h2 style={styles.header}>Sign In</h2>
       <form method="POST" style={styles.form} onSubmit={handleSignIn}>
