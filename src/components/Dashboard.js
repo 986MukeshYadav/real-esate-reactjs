@@ -82,7 +82,7 @@ profileImg: {
            style={{ ...styles.customSidebarButton, ...styles.customSidebarButtonHover }}
             className="custom-sidebar-button"
           >
-            <Link to="#" style={styles.customSidebarButton}>
+            <Link to="/AdminProperty" style={styles.customSidebarButton}>
               <FaBuilding style={styles.icon} />
               Property
             </Link>

@@ -47,7 +47,7 @@ const Banner = () => {
         </h1>
         <p className='max-w-[480px] mb-8'> 
         Discover unparalleled luxury and comfort as you rent your dream house with us. 
-        Nestled in the heart of [City/Area], our exclusive properties redefine sophistication. 
+        Nestled in the heart of City, our exclusive properties redefine sophistication. 
         
         </p>
     </div>

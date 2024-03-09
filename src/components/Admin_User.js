@@ -1,41 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FaUser, FaHome, FaSignOutAlt, FaEdit } from "react-icons/fa"; // Importing icons from Font Awesome
-import p from "../assets/img/houses/p.jpg";
 import house5 from "../assets/img/houses/house5.png";
 import house6 from "../assets/img/houses/house6.png";
 import a4 from "../assets/img/apartments/a4.png";
+import Sidebar from "./Dashboard";
 
 
 function AdminProperty() {
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
-      <nav className="hidden md:block bg-gradient-to-b from-purple-500 to-indigo-600 w-48 p-4 overflow-y-auto shadow-lg rounded-lg">
-  <div className="flex flex-col items-center mb-4">
-    <img
-      src={p}
-      alt="Circular Image"
-      className="rounded-full w-24 h-24 border-4 border-white"
-    />
-    <span className="text-sm font-bold text-white mt-2">Pawan Sah</span>
-    <span className="text-xs text-gray-200">psah770@rku.ac.in</span>
-  </div>
-  <ul>
-    <li className="sidebar-button flex items-center space-x-2 py-2 px-4 rounded-md hover:bg-indigo-500 transition duration-300">
-      <FaUser className="w-6 h-6 text-white" />
-      <span className="text-white">Users</span>
-    </li>
-    <li className="sidebar-button flex items-center space-x-2 py-2 px-4 rounded-md hover:bg-indigo-500 transition duration-300">
-      <FaHome className="w-6 h-6 text-white" />
-      <span className="text-white">Property</span>
-    </li>
-    <li className="sidebar-button flex items-center space-x-2 py-2 px-4 rounded-md hover:bg-indigo-500 transition duration-300">
-      <FaSignOutAlt className="w-6 h-6 text-white" />
-      <span className="text-white">Logout</span>
-    </li>
-  </ul>
-</nav>
+   <Sidebar />
+
 
 
       {/* Main Content Area */}
